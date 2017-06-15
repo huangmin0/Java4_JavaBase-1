@@ -51,8 +51,8 @@ public class OnlineUserList implements HttpSessionAttributeListener, HttpSession
 		Set all = (Set) this.app.getAttribute("online");
 		if (all.size() > 0) {
 			all.remove(paramHttpSessionEvent.getSession().getAttribute("userid"));
+			this.app.setAttribute("online", all);
 		}
-		this.app.setAttribute("online", all);
 	}
 
 	/**
